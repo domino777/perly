@@ -1,0 +1,48 @@
+=pod
+
+=head1 B<NAME>
+
+	perly - renamer for film and film's folders downloaded from torr... oohps, from your personal library
+
+=head1 B<SYNOPSIS>
+
+	perly [-scdlR] path1 [path2]
+
+=head1 B<DESCRIPTION>
+
+	perly is a perl script usefull for rename or make a renamed cody of films and folders into the same directory or an other one.
+	The blacklist of words to remove from the orginal file name are stored inside the script into an array. Perly rename everything and 
+	ignore file extensions.
+	Foldes un-rename and  move operation are selected by default.
+
+=head1 B<OPTION>
+
+	-s	simulation mode. No copy or move operation are taken, only STD output is showed.
+
+	-c	copy mode. Make a renamed copy.
+
+	-l	work only on path1.
+	
+	-d	rename folder.
+
+	-R	recursive mode. Look inside folder and subfolder.
+
+	--help	help message
+
+=head1 B<AUTHOR>
+	
+	Written by Mauro Ghedin
+
+=head1 B<REPORTING BUGS>
+	
+	Use with -s the fists times. If you are sure, run really.
+	
+	Report perly bugs to domyno88@gmail.com
+	
+=head1 B<COPYRIGHT>
+
+	Copyright  2013 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+	This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.
+
+
+=cut
