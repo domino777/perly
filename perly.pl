@@ -162,7 +162,11 @@ my @rmKeys = (
 		"bluray", "AC3" ,"[.]MD[.]", "[.]DD[.]", "2012", "2010", "2011", "[.][.]1[.][.]", 
 		"[.][.]5[.]1[.][.]", "EXTENDED", "EnG", "iTA", "-TrTd_TeaM", "2007", "EDiTiON", "_MD",
 		"UNRATED", "RERiP", "LiMiTED", "BrRiP", "XviD-", "LiAN", "_AAC[.]5[.]1[.]", "iDN_CreW",
+<<<<<<< HEAD
 		"BDrip", "eNGBrRip", "TrTd_TeaM", "5[.]1", "2008", "AAC"
+=======
+		"BDrip", "eNGBrRip", "TrTd_TeaM", "5[.]1", "2008", "AAC", "[_]"
+>>>>>>> 3ee8f0e2aa0df4c04a69de77fbfb031e57a727fc
 );
 
 #-------------------------------------------------------------------------------------------------------------
@@ -194,8 +198,12 @@ sub clearName(\@$$) {
 
 	#print "$_\n";
 	$string =~ s/[.]/ /g; 					# Remove point
+<<<<<<< HEAD
 	$string =~ s/^ - |^-|\[[^\]]*\]|\(.*\)|\s[.]|$ext$//g; 	# Remove -, [*], (*), string., file extension
 	$string =~ s/\_/ /g;					# Replace "_" with " "
+=======
+	$string =~ s/^ - |^-|\[.*\]|\(.*\)|\s[.]|$ext$//g; 	# Remove -, [*], (*), string., file extension
+>>>>>>> 3ee8f0e2aa0df4c04a69de77fbfb031e57a727fc
 	$string =~ s/ +/ /g;					# Replace multiple space
 	$string =~ s/ $//g;					# Remove space at the end of the line
 	$string =~ s/^[^a-zA-Z0-9]*//;					# Remove space at the start of the line
