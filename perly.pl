@@ -132,7 +132,7 @@ while (defined $ARGV[0] && $ARGV[0] =~ m/^-/g) {
 #-------------------------------------------------------------------------------------------------------------
 my $PATH, my $DESTINATION_PATH;
 
-$PATH = (defined $ARGV[0] ? shift @ARGV : die "Path not defined");
+$PATH = (defined $ARGV[0] ? shift @ARGV : die "Path not defined\n");
 $PATH =~ s/([^\/])$/$1\//;
 
 print "SOURCE:\t$PATH\n";
