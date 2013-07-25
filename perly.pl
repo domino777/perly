@@ -157,12 +157,23 @@ sleep(2);
 #	The removing order follows the orded of data into the array
 
 my @rmKeys = (
-		"ITA-ENG", "BRRip", "DVDRip", "BDRip", "1080p", "720p", "x264", "Xvid-", "TRL", "IDN_CREW", 
+		"ITA-ENG", "BRRip", "DVDRip", "BDRip", "1080p", "720p", "x264", "Xvid", "TRL", "IDN_CREW", 
 		"DLMux", "AT0MiC", "DD5", "h264-", "DarkSideMux", "BluRayRip", "T4P3", "iTALIAN", "Wind166", 
-		"bluray", "AC3" ,"[.]MD[.]", "[.]DD[.]", "2012", "2010", "2011", "[.][.]1[.][.]", 
+		"bluray", "AC3" ,"[.]MD[.]", "[.]DD[.]", "2012", "2010", "2011", "[.][.]1[.][.]",
 		"[.][.]5[.]1[.][.]", "EXTENDED", "EnG", "iTA", "-TrTd_TeaM", "2007", "EDiTiON", "_MD",
-		"UNRATED", "RERiP", "LiMiTED", "BrRiP", "XviD-", "LiAN", "_AAC[.]5[.]1[.]", "iDN_CreW",
-		"BDrip", "eNGBrRip", "TrTd_TeaM", "5[.]1", "2008", "AAC", "[_]"
+		"UNRATED", "RERiP", "LiMiTED", "BrRiP", "XviD", "LiAN", "_AAC[.]5[.]1[.]", "iDN_CreW",
+		"BDrip", "eNGBrRip", "TrTd_TeaM", "5[.]1", "2008", "AAC", "R5", "SiLENT",
+		"READNFO[.]LD", "READNFO", "WORKPRINT", "iNTERNAL", "TrTd_CREW", "DVDSCR", "SUBBED", "DvDrip", 
+		"FoxDraGoN", "XviD", "LD[.]FS", "DiRFiX", "CSi", "[.]LD[.]", "HDRip", "Bma", "ac3-ita", "2005", "2009",
+		"BmA", "-ENG", "[.]avi", "2006", "2[.]1[.]", "FREE", "Dvdrip", "[.]Ita[.]", "Xvid",
+		"[.]HQ[.]", "DvDRiP", "-GOLD", "STV", "-Republic", "DVDrip", "Divx Ita", "-THNEA", "DVDscr",
+		"INTERNAL", "1997", "DLmux", "-UPZ", "ITA[.]WEB", "-MOViEMAX", "-REV", "ENG_", "Blueray",
+		"Bluray", "-MvN", "-LiONS", "-THEMA", "-Twice", "DvDRip", "H264", "TNZ", "[.]TEO", "-SILENT",
+		"XViD", "XVID", "-AVENUE", "eNG", "BrRip", "-RiVoLTs", "SCREENER", "DVDRIP", "DGT", "-NWS",
+		"TNT_Village", "-ZEN", "LIMITED", "[.]TS[.]", "[.]ITA[.]", "SUB[.]ENG", "HQscr", "-A-TeaM", "2001 Ita",
+		"A_DTS", "DUAL", "BluRay", "LDMux", "1993", "ENGLiSH", "-TBN", "[.]ita", "iTa", "Twice", "-iTV",
+		"1995", "DVD rip", "Ac3", "Ktb", "-AtG", "dvd rip PERFETTO", "-LiFE", "By URL Fux_vr", "2004 Ita",
+		"READ", "NFO"
 );
 
 #-------------------------------------------------------------------------------------------------------------
@@ -194,7 +205,8 @@ sub clearName(\@$$) {
 
 	#print "$_\n";
 	$string =~ s/[.]/ /g; 					# Remove point
-	$string =~ s/^ - |^-|\[.*\]|\(.*\)|\s[.]|$ext$//g; 	# Remove -, [*], (*), string., file extension
+	$string =~ s/^ - |^-|\[[^\]]*\]|\(.*\)|\s[.]|$ext$//g; 	# Remove -, [*], (*), string., file extension
+	$string =~ s/\_/ /g;					# Replace "_" with " "
 	$string =~ s/ +/ /g;					# Replace multiple space
 	$string =~ s/ $//g;					# Remove space at the end of the line
 	$string =~ s/^[^a-zA-Z0-9]*//;					# Remove space at the start of the line
