@@ -1,7 +1,7 @@
 perly
 =====
 
-This perl programm is usefull for rename film's downloaded from "legal" way o.O
+This perl programm is usefull for rename the films downloaded from "legal" way o.O
 
 Perly remove all brackets and its contents ( [DivX-ENg-blahblah] or (bla bla bla) ) and also remove all words contained in a blacklist inside the script.
 
