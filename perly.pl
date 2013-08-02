@@ -173,7 +173,7 @@ my @rmKeys = (
 		"TNT_Village", "-ZEN", "LIMITED", "[.]TS[.]", "[.]ITA[.]", "SUB[.]ENG", "HQscr", "-A-TeaM", "2001 Ita",
 		"A_DTS", "DUAL", "BluRay", "LDMux", "1993", "ENGLiSH", "-TBN", "[.]ita", "iTa", "Twice", "-iTV",
 		"1995", "DVD rip", "Ac3", "Ktb", "-AtG", "dvd rip PERFETTO", "-LiFE", "By URL Fux_vr", "2004 Ita",
-		"READ", "NFO"
+		"READ", "NFO", "2013", "TS"
 );
 
 #-------------------------------------------------------------------------------------------------------------
