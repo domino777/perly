@@ -4,7 +4,7 @@
 
 	perly - renamer for film and film's folders downloaded from torr... oohps, from your personal library
 
-=head1 B<SYNOPSIS>
+=head2 B<SYNOPSIS>
 
 	perly [-scdlR] path1 [path2]
 
