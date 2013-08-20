@@ -157,26 +157,32 @@ sleep(2);
 #	The removing order follows the orded of data into the array
 
 #	Open black list file
+
+$/ = undef;
+
 open fHNLD, "$ENV{'HOME'}/perlyBlklist.cfg" or die "\"perlyBlklist.cfg\" not found in home directory";
 
-my @fKEYS;
+my $fKEYS;
 my @rmKeys;
-while (<fHNLD>) {									#	read file
-		if (/^KEYS\=\{/) {							#	KEYS key word match
-			push @fKEYS, $_;
-			while (<fHNLD> ) {
-				push @fKEYS, $_;				
-				last if /\}$/;
-			}
-		}
-}
 
-foreach (@fKEYS) {
-	s/^KEYS\=\{\"|\,$|\"\}|\"\,$|^\"//g;							#	removing useless characters
-	foreach my $word (split '","', $_) {
-		push @rmKeys, $word;										#	prepare	array of blackkeyword
+my @fData = <fHNLD>;
+foreach (@fData) {
+	s/\n//g;
+	if (/KEYS\=\{/) {
+		$_ =~ /KEYS\=\{\"(.*)\"\}/g;
+		$fKEYS = $1;
 	}
 }
+
+@rmKeys = split '","', $fKEYS;
+
+
+#~ foreach (@fKEYS) {
+	#~ s/^KEYS\=\{\"|\,$|\"\}|\"\,$|^\"//g;							#	removing useless characters
+	#~ foreach my $word (split '","', $_) {
+		#~ push @rmKeys, $word;										#	prepare	array of blackkeyword
+	#~ }
+#~ }
 
 #~ my @rmKeys = (
 		#~ "ITA-ENG", "BRRip", "DVDRip", "BDRip", "1080p", "720p", "x264", "Xvid", "TRL", "IDN_CREW", 
