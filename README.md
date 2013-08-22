@@ -7,7 +7,8 @@ Perly remove all brackets and its contents ( [DivX-ENg-blahblah] or (bla bla bla
 
 perly is provided with a simulation mode for test if the translation is correct or not.
 
---Next implementation is to create a *.cfg file in ~/.config/ and an external blacklist text file in ~/
-  Implemented primitive configuration file in ~/
+--Next implementation is to create a *.cfg file in ~/.config/ and an external blacklist text file in ~/.
+
+Implemented primitive configuration file in ~/
 
 Read perly.pod for more information about functions
