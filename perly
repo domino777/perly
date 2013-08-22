@@ -310,7 +310,7 @@ die "Folder writing is not allowed" if ((!(-w $PATH) && ($doLocal)) || ((!$doLoc
 my @fileTree = lsFolder($PATH, $recursive); # $recursive : recursive mode selected
 my $fName;
 
-if($doLocal && $alsoDir && !$makeCp) {					# reversing order array
+if(!$makeCp) {					# reversing order array
 	@fileTree = reverse @fileTree;
 }
 
@@ -327,7 +327,7 @@ foreach (@fileTree) {
 	if( -d && !$alsoDir) {
 			$fName = $fileOnPATH;
 	}
-	elsif( -f && (!$alsoDir || ($alsoDir && !$makeCp && $doLocal))) {
+	elsif( -f && (!$alsoDir || ($alsoDir && !$makeCp ))) {
 			$fileOnPATH =~ /(.*\/)(.*)$/;
 			my $fileName = (defined $2 ? $2 :  $fileOnPATH);
 			my $filePath = (defined $2 ? $1 : "");
@@ -338,7 +338,7 @@ foreach (@fileTree) {
 			$fName = clearName(@rmKeys, $fileOnPATH, $ext);		
 	}
 
-	my $destination = "$DESTINATION_PATH$fName";
+	my $destination = ( -f && $fileOnPATH =~ /\//g && !$makeCp ? "$PATH$fName" : "$DESTINATION_PATH$fName");
 	$destination .= ".$ext" unless !$ext;
 	
 	print "From::\t$_\n";
